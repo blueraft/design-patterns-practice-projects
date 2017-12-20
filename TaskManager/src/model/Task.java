@@ -1,9 +1,10 @@
 package model;
 
-public class Task {
 
-    private String description;
+public class Task extends Doable{
+
     private String date;
+    private String description;
     private String location;
     private boolean status;
 
@@ -23,6 +24,7 @@ public class Task {
     public void setDate(String date) { this.date = date; }
     public void setLocation(String location) { this.location = location; }
 
+
     public String getDescription() {
         return description + " on " + getDate() + " @" + getLocation();
     }
@@ -33,6 +35,7 @@ public class Task {
         }
     }
 
+    @Override
     public void display(String indentSpace) {
         System.out.println(indentSpace + this.getDescription());
     }
