@@ -1,6 +1,8 @@
 package model.media;
 
-public abstract class AbstractMedia {
+import java.util.Iterator;
+
+public abstract class AbstractMedia{
 
     protected String name;
     protected String creator;
@@ -17,5 +19,17 @@ public abstract class AbstractMedia {
     public String getCreator() { return creator; }
     public String getGenre() { return genre; }
 
-
+    @Override
+    public String toString() {
+        String simpleName = this.getClass().getSimpleName();
+        switch (simpleName) {
+            case "Movie":
+                return ("A Movie named " + name + " by: " + creator);
+            case "Photo":
+                return ("A Photo named " + name + " by: " + creator);
+            case "Song":
+                return ("A Song named " + name + " by: " + creator);
+        }
+        return null;
+    }
 }

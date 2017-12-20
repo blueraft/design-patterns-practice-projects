@@ -1,6 +1,8 @@
 package test;
 
+import model.Doable;
 import model.Task;
+import model.Todo;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -9,9 +11,13 @@ import static org.junit.Assert.*;
 public class TaskTest {
 
     private Task t;
+    private Doable todo1;
+    private Doable todo2;
 
     @Before
     public void setUp() {
+        todo1 = new Todo("Make");
+        todo2 = new Todo("Jake");
         t = new Task("Get a coffee", "08/16/2017", "JJ Bean");
     }
 
@@ -39,5 +45,9 @@ public class TaskTest {
         assertTrue(t.getStatus());
     }
 
+    @Test
+    public void testDisplay() {
+        todo2.display(" ");
+    }
 
 }

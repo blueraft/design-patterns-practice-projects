@@ -13,5 +13,4 @@ public class Movie extends AbstractMedia {
     // getters
     public double getLength() { return length; }
 
-
 }
